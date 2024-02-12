@@ -1,20 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>School listView</title>
-</head>
-<body>
+{%  extends  'app/dummy.html' %}
+
+{% block title%}
+   <title>School_list</title>
+{% endblock %}
+
+{% block body_block %}
     <center>
         <h1>School listView Data</h1>
         {% for so in nari %}
 
-         <h2>Sname:-{{so.sname}}</h2> 
+         <h2>Sname:-<a href="{{so.pk}}">{{so.sname}} </a></h2>
          <h2>Sprincipal:-{{so.sprincipal}}</h2>
-         <h2>Slocation:-{{so.slocation}}</h2> <br>     
+         <h2>Slocation:-{{so.slocation}}</h2> <br>   
+           
 
         {% endfor %}
     </center>
-</body>
-</html>
+{% endblock %}

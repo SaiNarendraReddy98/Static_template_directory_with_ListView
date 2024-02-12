@@ -1,0 +1,30 @@
+{%  extends  'app/dummy.html' %}
+
+{% block title%}
+   <title>School_detailView</title>
+{% endblock %}
+
+{% block body_block %}
+    <center>
+        <h1>Detail Information of {{sclobj.sname}} :- </h1>
+        <h2>Name of the School is:-{{sclobj.sname}}</h2>
+        <h2>Name of the Principal is:-{{sclobj.sprincipal}}</h2>
+        <h2>location of the School is:-{{sclobj.sname}}</h2>
+
+        <table border="3px">
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+            </tr>
+        {% for so in sclobj.Students.all  %}
+
+            <tr>
+                <td>{{so.stname}}</td>
+                <td>{{so.stage}}</td>
+            </tr>
+
+        {% endfor %}
+        </table>
+        <a href="{% url 'School_Update' pk=sclobj.pk %}" class="btn btn-warning">Update</a>
+    </center>
+{% endblock %}
