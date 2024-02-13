@@ -7,13 +7,22 @@
 {% block body_block %}
     <center>
         <h1>School listView Data</h1>
+        <table border="6px" cellspacing="5px" cellpadding="10px">
+            <tr>
+                <th>Sname</th>
+                <th>Sprincipal</th>
+                <th>Slocation</th>
+            </tr>
         {% for so in nari %}
-
-         <h2>Sname:-<a href="{{so.pk}}">{{so.sname}} </a></h2>
-         <h2>Sprincipal:-{{so.sprincipal}}</h2>
-         <h2>Slocation:-{{so.slocation}}</h2> <br>   
-           
-
+          <tr>
+            <td><a href="{{so.pk}}">{{so.sname}}</a></td>
+            <td>{{so.sprincipal}}</td>
+            <td>{{so.slocation}} </td>
+           </tr>
         {% endfor %}
+        
+        </table>
     </center>
 {% endblock %}
+
+

@@ -6,10 +6,12 @@
 
 {% block body_block %}
     <center>
+        <br><br><br> 
+
         <h1>Detail Information of {{sclobj.sname}} :- </h1>
         <h2>Name of the School is:-{{sclobj.sname}}</h2>
         <h2>Name of the Principal is:-{{sclobj.sprincipal}}</h2>
-        <h2>location of the School is:-{{sclobj.sname}}</h2>
+        <h2>location of the School is:-{{sclobj.sname}}</h2> <br><br><br>
 
         <table border="3px">
             <tr>
@@ -24,7 +26,16 @@
             </tr>
 
         {% endfor %}
-        </table>
+
+        </table> <br><br><br>
+
         <a href="{% url 'School_Update' pk=sclobj.pk %}" class="btn btn-warning">Update</a>
+
+
+        <a href="{% url 'School_Delete' pk=sclobj.pk %}" class="btn btn-warning">Delete</a> <br><br>
+
+
+        <a href="{% url 'Student_Create' %}" class="btn btn-primary">add student to school</a>
+
     </center>
 {% endblock %}
